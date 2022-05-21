@@ -1,0 +1,16 @@
+package com.arun;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+        System.out.println("Enter your number");
+        Double firstvalue = scanner.nextDouble();
+        System.out.println("Enter your number");
+        Double secondvalue = scanner.nextDouble();
+        double answer= firstvalue+secondvalue;
+        System.out.println("the addition number is :" +answer);
+    }
+}
