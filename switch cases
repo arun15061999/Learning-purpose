@@ -1,0 +1,24 @@
+package com.arun;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter the number");
+        int age = scanner.nextInt();
+        switch (age) {
+            case 1:
+                System.out.println("one");
+                break;
+            case 2:
+                System.out.println("two");
+                break;
+            case 3:
+                System.out.println("three");
+                break;
+            default:
+                System.out.println("other number");
+        }
+    }
