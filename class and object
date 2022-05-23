@@ -1,0 +1,30 @@
+package com.arun;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+      secondclass obj= new secondclass();
+        obj.output();
+    }
+    
+  //second class//  
+  
+   package com.arun;
+
+import java.util.Scanner;
+
+public class secondclass {
+    void output(){
+Scanner scanner= new Scanner(System.in);
+        System.out.println("Enter the number");
+        double firstvalue = scanner.nextDouble();
+        System.out.println("Enter your number");
+        double secondvalue = scanner.nextDouble();
+        double answer= firstvalue+secondvalue;
+        System.out.println("the addition number is :" +answer);
+    }
+}
+
+ 
