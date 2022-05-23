@@ -1,0 +1,18 @@
+package com.arun;
+
+import java.util.Scanner;
+
+public class Main {
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter the price amount");
+    int price1 = scanner.nextInt();
+    System.out.println("Enter the price amount");
+    int price2 = scanner.nextInt();
+    System.out.println("Enter the price amount");
+    int price3 = scanner.nextInt();
+    double total_amount = price1 + price2 + price3;
+    System.out.println("The total price amount" + total_amount);
+  }
+}
