@@ -1,0 +1,30 @@
+package com.arun;
+
+
+public class Main {
+  public static void main(String[] args){
+      shop obj =new shop();
+      obj.addMoney(10);
+      obj.addMoney(500);
+      obj.addMoney(15);
+      obj.addMoney(50);
+      obj.addMoney(20);
+
+      System.out.println(obj.getMoney());
+
+  }
+}
+// second class
+package com.arun;
+
+public class shop {
+    public int money;
+
+    public void addMoney(int money) {
+        this.money += money;
+    }
+    public int getMoney() {
+        return money;
+    }
+}
+
