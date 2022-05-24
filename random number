@@ -1,0 +1,13 @@
+package com.arun;
+
+
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Random arun = new Random();
+        for( int i =1203999421; i<1203999430; i++)
+        {
+            System.out.println(arun.nextInt( 1203999421) +1);
+        }
+    }
