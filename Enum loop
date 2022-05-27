@@ -1,0 +1,15 @@
+package com.arun;
+
+import java.util.EnumSet;
+import java.util.Scanner;
+
+enum days {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
+}
+public class Main{
+    public static void main(String[] args){
+        for(days day: EnumSet.range(days.SUNDAY, days.FRIDAY)){
+            System.out.println(day);
+        }
+    }
+}
