@@ -1,0 +1,28 @@
+package com.arun;
+
+import java.util.Scanner;
+
+class Addition {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("the score:");
+        int run= scanner.nextInt();
+        CricketScore myobj= new CricketScore();
+        myobj.Batsmanscore();
+        myobj.Batsmanscore(run);
+    }
+}
+new class
+package com.arun;
+
+class CricketScore {
+    void Batsmanscore() {
+
+        System.out.println("the score is:");
+    }
+    void Batsmanscore(int run)
+    {
+        System.out.println("the score is:" +run);
+    }
+}
