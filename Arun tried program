@@ -1,0 +1,137 @@
+package com.arun;
+
+
+//import java.util.Scanner;
+
+import java.io.IOException;
+
+public class arun {
+
+    public static void main(String[] args) throws IOException {
+
+        System.out.println("Welcome to 11 std");
+
+        students obj = new students();
+        obj.name();
+//            obj.registerid();
+            obj.subjects();
+            marks ob= new marks();
+            ob.scoring();
+
+    }
+
+    }
+//        CricketScore obj = new CricketScore();
+//        obj.Batsmanscore();
+//        obj. Batsmanscore(2689065);
+//    }
+//
+
+//        Scanner input = new Scanner(System.in);
+//        int num = 80;
+//        if (num * 10 ==0) {
+//            System.out.println(num);
+//        } else {
+//            System.out.println("no");
+//        }
+//    }
+//}
+//    String str = input.next();
+//    String abs = input.next();
+
+//        String a = str;
+//        str = abs;
+//        abs = a;
+//        System.out.println("Swapped words    " +str);
+//    System.out.println("Swapped words    " +abs);
+//    }
+//}
+//    int a= input.nextInt();
+//    int b= input.nextInt();
+//   int c=a;
+//   a=b;
+//   b=c;
+//   System.out.println("The swapped value is"+a);
+//    System.out.println("The swapped value is"+b);
+//    }
+//
+//}
+
+package com.arun;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+class students {
+    void name() {
+        String str;
+        System.out.println("Name of the students");
+        Scanner studentname = new Scanner(System.in);
+        String sc = studentname.nextLine();
+
+    }
+    void registerid() {
+        System.out.println("Enter the total number of students:");
+        Scanner id = new Scanner(System.in);
+        int count = id.nextInt();
+        for (int i = 1; i <= count; i++) {
+            System.out.println("Total number of students:   " + i);
+        }
+    }
+
+    void subjects() throws IOException {
+        System.out.println("Enter the total number of subjects:");
+        Scanner id = new Scanner(System.in);
+        int cont = id.nextInt();
+        System.out.println("Total number of subjects:   " + cont);
+
+//        int g;
+//        for (int x = 0; x < cont; x++) {
+//            System.out.println("Enter the subject score");
+//            g = (int) System.in.read();
+//            break;
+            for (int i = 1; i <= cont; i++) {
+                System.out.println("The subject score is :   " + i);
+//       while(0<=cont){
+//           System.out.println("Enter the valve");
+
+        }
+            }
+
+        }
+
+
+
+//    void Batsmanscore() {
+//
+//        System.out.println("the score is:");
+//    }
+//    void Batsmanscore(int run)
+//    {
+//        System.out.println("the score is:" +run);
+//    }
+//}
+
+package com.arun;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class marks {
+    void scoring() throws IOException {
+        System.out.println("Enter the total mark");
+        Scanner mark = new Scanner(System.in);
+        int cout = mark.nextInt();
+        int g;
+        for (int x = 0; x < cout; x++) {
+            System.out.println("Enter the subject score");
+            g = (int) System.in.read();
+            break;
+//        for (int i = 1; i <= cout; i++) {
+//            System.out.println("Total number of marks:   " + i);
+//        }
+        }
+
+    }
+}
+
