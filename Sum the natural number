@@ -1,0 +1,10 @@
+package com.arun;
+
+class arun {
+    public static void main(String[] args) {
+        int num = 100, sum = 0;
+        for (int i = 0; i <= num; ++i) {
+            sum = sum + i;
+        }
+        System.out.println("The sum is" + sum);
+    }}
