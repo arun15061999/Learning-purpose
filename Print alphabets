@@ -1,0 +1,12 @@
+package com.arun;
+
+class arun {
+    public static void main(String[] args) {
+      char c= 'A';
+      for(c='A';c<='Z';c++)
+      {
+          System.out.print(c +"  ");
+      }
+    }
+}
+
