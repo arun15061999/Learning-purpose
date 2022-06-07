@@ -1,0 +1,42 @@
+package com.arun;
+
+
+import java.util.Scanner;
+
+class arun {
+    public static void main( String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char operator;
+        double num1, num2, num3;
+        System.out.println("Select the operator:  +,-, *, /");
+     
+        operator = sc.next().charAt(0);
+
+        System.out.println("Enter the number");
+        num1 = sc.nextDouble();
+        System.out.println("Enter the number");
+        num2 = sc.nextDouble();
+        switch (operator) {
+            case '+':
+                num3 = num1 + num2;
+                System.out.println("The number is " + num3);
+                break;
+            case '-':
+                num3 = num1 - num2;
+                System.out.println("The number is " + num3);
+                break;
+            case '*':
+                num3 = num1 * num2;
+                System.out.println("The number is " + num3);
+                break;
+            case '/':
+                num3 = num1 / num2;
+                System.out.println("The number is " + num3);
+                break;
+            default:
+
+                System.out.println("The operator is valid");
+                break;
+        }
+
+    }
