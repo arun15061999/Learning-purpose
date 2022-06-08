@@ -1,0 +1,16 @@
+package com.arun;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.Scanner;
+
+class arun {
+  public static void main(String[] args) {
+    LocalDateTime current = LocalDateTime.now();
+//for(int i=0; current.isAfter(current);i++)
+    
+    System.out.println("Current Date and Time is: " + current);
+
+}
+}
