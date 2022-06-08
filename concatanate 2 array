@@ -1,0 +1,24 @@
+package com.arun;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.Scanner;
+
+class arun {
+  public static void main(String[] args) {
+    int[] Array1 = {1, 2, 3, 4};
+    int[] Array2 = {5, 6, 7, 8};
+//    int[] Array3 = {2, 4, 6, 8};
+
+    int ar1len = Array1.length;
+    int ar2len = Array2.length;
+//    int ar3len = Array3.length;
+    int[] res = new int[ar1len + ar2len];
+    System.arraycopy(Array1, 0, res, 0, ar1len);
+    System.arraycopy(Array2, 0, res,ar1len, ar2len);
+//    System.arraycopy(Array2, 0, res, ar2len, ar3len);
+    System.out.println(Arrays.toString(res));
+  }
+}
+
+
