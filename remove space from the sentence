@@ -1,0 +1,12 @@
+package com.arun;
+
+import java.util.Scanner;
+
+class arun {
+    public static void main(String[] args) {
+        String words = "Onc   e upon a Tim    e T  here Liv e  d a   g   hos  t";
+        System.out.println("the original words " +words);
+        words= words.replaceAll("\\s", "");
+        System.out.println("the replaced words " +words);
+    }
+}
