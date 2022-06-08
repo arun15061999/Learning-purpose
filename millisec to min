@@ -1,0 +1,25 @@
+package com.arun;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+class arun {
+  public static void main(String[] args) {
+Scanner sc= new Scanner(System.in);
+System.out.println("enter the number");
+    long milliseconds = sc.nextLong();
+
+    // us of toSeconds()
+    // to convert milliseconds to minutes
+    long seconds = TimeUnit.MILLISECONDS.toSeconds(milliseconds);
+    System.out.println(milliseconds + " Milliseconds = " + seconds + " Seconds");
+
+    // use of toMinutes()
+    // to convert milliseconds to minutes
+    long minutes = TimeUnit.MILLISECONDS.toMinutes(milliseconds);
+    System.out.println(milliseconds + " Milliseconds = " + minutes + " Minutes");
+  }
+}
