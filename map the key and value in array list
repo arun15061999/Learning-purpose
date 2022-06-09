@@ -1,0 +1,23 @@
+package com.arun;
+
+
+import java.util.*;
+
+public class arun {
+    public static void main(String[] args) {
+        Map< String, Integer> map = new HashMap<>();
+        map.put("A", 1);
+        map.put("b", 2);
+        map.put("c", 3);
+        map.put("d", 4);
+        map.put("e", 5);
+        map.put("f", 6);
+        List<String> keylist= new ArrayList(map.keySet());
+        List<Integer> numberlist= new ArrayList(map.values());
+System.out.println(keylist);
+System.out.println(numberlist);
+
+
+
+    }
+}
