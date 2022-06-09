@@ -1,0 +1,23 @@
+package com.arun;
+
+
+import java.io.File;
+import java.io.IOException;
+
+public class Main {
+
+    public static void main(String[] args) {
+        File file = new File("filenew.txt");
+        try {
+            boolean value = file.createNewFile();
+            if (value) {
+                System.out.println("new file created");}
+	        else
+                {
+                    System.out.println("file  already exists");
+                }
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }}
