@@ -1,0 +1,27 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class seleniumtest {
+
+public static void main(String[] args) throws InterruptedException {
+System.setProperty("webdriver.chrome.driver","\"C:\\Users\\91934\\Downloads\\chromedriver_win32\"" );
+    WebDriver driver = new ChromeDriver();
+    driver.get("http://www.facebook.com");
+    driver.manage().window().maximize();
+    WebElement day1= driver.findElement(By.id("day"));
+    Select oSelect = new Select(day1);
+    Thread.sleep(3000);
+    oSelect.selectByValue(String.valueOf(30));
+    WebElement month= driver.findElement(By.id("month"));
+    Select month1 = new Select(month);
+    Thread.sleep(3000);
+    month1.selectByVisibleText("sept");
+    WebElement year = driver.findElement(By.id("year"));
+    Select year1 = new Select(month);
+    Thread.sleep(3000);
+    year1.selectByValue("1977");
+}
+}
