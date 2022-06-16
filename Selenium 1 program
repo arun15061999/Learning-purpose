@@ -1,0 +1,22 @@
+package com.seleniumtest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.Set;
+
+class Demo{
+     public static  void main(String[] args){
+      System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32 (1)\\chromedriver.exe\\");
+         WebDriver driver= new ChromeDriver();
+       driver.get("https://www.facebook.com");
+       String url= driver.getCurrentUrl();
+       String pagesource = driver.getPageSource();
+       String pagetitle = driver.getTitle();
+       String windowhandle = driver.getWindowHandle();
+       Set window= driver.getWindowHandles();
+       System.out.println("URL is "+url);
+       System.out.println("pagesource is"+pagesource);
+         System.out.println("pagetitle is"+pagetitle);
+         System.out.println("windowhandle is"+windowhandle);
+     }
+        }
