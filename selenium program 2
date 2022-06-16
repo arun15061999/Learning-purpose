@@ -1,0 +1,44 @@
+package com.seleniumtest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Set;
+
+class Demo {
+//    public static void main(String[] args) {
+        RemoteWebDriver driver = null;
+        String username = "<lambdatest_username>";
+        String password = "<lambdatest_password>";
+        public static void main(){
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browsername", "chrome");
+        capabilities.setCapability("version", "102.0");
+        capabilities.setCapability("version", "102.0");
+        capabilities.setCapability("platform", "window");
+        capabilities.setCapability("build", "Dialogboxes and popup seleinum java");
+//        try {
+//            driver = new RemoteWebDriver(
+//                    new URL("https://" + username + ":" + password + "@hub.lambdatest.com/wd/hub"), capabilities);
+//
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//            System.out.println("Invalid grid URL");
+        }
+        //      System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32 (1)\\chromedriver.exe\\");
+//         WebDriver driver= new ChromeDriver();
+//       driver.get("https://www.facebook.com");
+//       String url= driver.getCurrentUrl();
+////       String pagesource = driver.getPageSource();
+//       String pagetitle = driver.getTitle();
+//       String windowhandle = driver.getWindowHandle();
+//       Set window= driver.getWindowHandles();
+//       System.out.println("URL is "+url);
+////       System.out.println("pagesource is"+pagesource);
+//         System.out.println("pagetitle is"+pagetitle);
+//         System.out.println("windowhandle is"+windowhandle);
+    }
