@@ -1,0 +1,56 @@
+package com.seleniumtest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import javax.xml.datatype.Duration;
+import java.util.List;
+import java.util.Set;
+
+class Demo{
+    public static  void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32 (1)\\chromedriver.exe\\");
+        WebDriver driver= new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://www.leafground.com/pages/Dropdown.html");
+        WebElement dropdown1= driver.findElement(By.id("dropdown1"));
+        Select  select1= new Select(dropdown1);
+//select1.selectByIndex(3);
+        select1.selectByVisibleText("selenium");
+        List<WebElement> listsofoption= select1.getOptions();
+     int size=    listsofoption.size();
+     System.out.println("number of elements"+size );
+     dropdown1.sendKeys("Loadrunner");
+     WebElement multiselect= driver.findElement(By.xpath("//[@id='contentblock']/section/div[6]/select")
+     );
+     Select multiselectbox= new Select(multiselect);
+     multiselectbox.selectByIndex(1);
+        multiselectbox.selectByIndex(2);
+        multiselectbox.selectByIndex(3);
+//        WebElement password= driver.findElement(By.id("pass"));
+//        WebElement demo= driver.findElement(By.name("login"));
+//        dropdown1.sendKeys("9787603638");
+//        password.sendKeys("arun15061999");
+//        demo.click();
+//        WebElement search= driver.findElement(By.className("lzcic4wl gs1a9yip br7hx15l h2jyy9rg n3ddgdk9 owxd89k7 rq0escxv j83agx80 a5nuqjux l9j0dhe7 k4urcfbm kbf60n1y b3i9ofy5"));
+////        WebElement searchbutton= driver.findElement(B)
+////        driver.get("http://www.facebook.com");
+////        driver.switchTo().frame("");
+////        driver.findElement(By.linkText("")).click();
+////        driver.close();
+////        String actualUrl="https://www.facebook.com/homepage//";
+//        String url= driver.getCurrentUrl();
+//        String pagesource = driver.getPageSource();
+//        String pagetitle = driver.getTitle();
+//        String windowhandle = driver.getWindowHandle();
+//        Set window= driver.getWindowHandles();
+//        System.out.println("URL is "+url);
+//        System.out.println("pagesource is"+pagesource);
+//        System.out.println("pagetitle is"+pagetitle);
+//        System.out.println("windowhandle is"+windowhandle);
+
+    }
+}
