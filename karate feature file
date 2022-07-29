@@ -1,0 +1,206 @@
+#Feature: sample API testing
+#
+#  Background:
+#    * url 'https://reqres.in/api'
+#    * header Accept = 'application/json'
+#    * def expectedOutput = read("response1.json")
+#
+#  Scenario:
+#  Get the listed users details
+#    Given path '/users'
+#    And request {name:'Arun'}
+#    And request {job: 'Leader'}
+#    When method post
+#    Then status 201
+#    And print response
+#    And match response =={ "job": "Leader","id": "#string","createdAt": "#ignore"}
+#
+#  Scenario:
+#  get the data from reqres server
+#    Given  path ;'/users?2'
+#    When method get
+#    Then status 200
+#    And print response
+#
+#  Scenario:
+#  get the data from jsonpath finder server
+#    Given  path ;'/users'
+#    And param page = 2
+#    When method get
+#    Then status 200
+#    And print response
+##  And match response.x.data[0].first_name == Michael
+#    And assert response.data.length ==6
+#    And match response.data[1].id ==8
+#    And match response.data[3].last_name =='Fields'
+#
+#  Scenario:
+#  get the data from response json file
+#    Given path '/users'
+#    And request {name:'Arun'}
+#    And request {job: 'Leader'}
+#    When method post
+#    Then status 201
+#    And match response == expectedOutput
+#    And print response
+#
+#  Scenario:
+#  get the from req file
+#    Given path '/users'
+#    And def projectpath = karate.properties['user.dir']
+#    And print projectpath
+#    And def filepath = projectpath+ '\src\test\java\examples\users\request1.json'
+#    And print filepath
+#    And def requestbody1 = filepath
+#    And request requestBody1
+#    When method Post
+#    Then status 201
+#    And match response == expectedOutput
+#    And print response
+
+Feature:
+  print the add number
+  Scenario: add 2 numbers
+  * def bal = 1000
+    * def a = 200
+    * def b = 233
+    * print 'total amount' +(bal + a +b)
+    * print  'HEllo world'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
