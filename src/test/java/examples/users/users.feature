@@ -13,7 +13,7 @@ Feature: sample API testing
       "status": "active"
       }
       """
-
+* configure logPrettyResponse = true
   Scenario:
   Get the listed users details
     Given path '/users'
