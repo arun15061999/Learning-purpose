@@ -1,0 +1,47 @@
+package Leafground;
+
+
+
+import java.awt.AWTException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Inspection_Checkbox {
+
+	public static void main(String[] args) throws InterruptedException, AWTException {
+	WebDriver driver = new ChromeDriver();
+    driver.get("https://leafground.com/dashboard.xhtml");
+    System.out.println("URL lanched successfully");
+    driver.manage().window().maximize();
+	driver.findElement(By.xpath("//*[contains(@class,'pi pi-server layout-menuitem-icon')]")).click();
+	driver.findElement(By.xpath("//span[text()='Check Box']")).click();
+	driver.findElement(By.xpath("(//div[@class='ui-chkbox-box ui-widget ui-corner-all ui-state-default'])[1]")).click();
+	WebElement alerttext = driver.findElement(By.xpath("//*[@id=\"j_idt87:j_idt91\"]/div[2]"));
+	alerttext.click();
+    Thread.sleep(2000);
+    WebElement text = driver.findElement(By.xpath("//span[@class='ui-growl-title']"));
+	System.out.println("The Alert message is " + text.getText());
+	WebElement alerttext2 = driver.findElement(By.xpath("//*[@id=\"j_idt87:j_idt91\"]/div[2]"));
+	alerttext2.click();
+    Thread.sleep(2000);
+    WebElement text1 = driver.findElement(By.xpath("//span[@class='ui-growl-title']"));
+	System.out.println("The Alert message is " + text1.getText());
+    
+//	driver.findElement(By.xpath("(//div[@class='ui-chkbox-box ui-widget ui-corner-all ui-state-default'])[2]")).click();
+	//driver.findElement(By.xpath("(//div[@class='ui-chkbox-box ui-widget ui-corner-all ui-state-default'])[3]")).click();
+	driver.findElement(By.xpath("//label[text()='C-Sharp']")).click();
+	driver.findElement(By.xpath("//label[text()='Java']")).click();
+	driver.findElement(By.xpath("//label[text()='Python']")).click();
+	Thread.sleep(2000);
+	WebElement slidebox = driver.findElement(By.xpath("//div[@class='ui-toggleswitch-slider']"));
+	slidebox.submit();
+
+
+	
+	
+	}
+
+}
