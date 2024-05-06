@@ -1,0 +1,47 @@
+package leafground;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Inspection_Dropdown {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://leafground.com/dashboard.xhtml");
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		System.out.println("URL lanched successfully");
+		driver.manage().window().maximize();		
+		driver.findElement(By.xpath("//*[contains(@class,'pi pi-server layout-menuitem-icon')]")).click();
+		driver.findElement(By.xpath("//span[text()='Dropdown']")).click();
+		
+        driver.findElement(By.xpath("//select[@class='ui-selectonemenu']")).click();
+        driver.findElement(By.xpath("//option[text()='Selenium']")).click();
+        
+        driver.findElement(By.xpath("(//div[@class='ui-selectonemenu-trigger ui-state-default ui-corner-right'])[1]")).click();
+        driver.findElement(By.xpath("//li[text()='India']")).click();
+        
+        driver.findElement(By.xpath("(//div[@class='col-12'])[3]")).click();
+        driver.findElement(By.xpath("//li[text()='Chennai']")).click();
+        
+        driver.findElement(By.xpath("//span[@class='ui-button-icon-primary ui-icon ui-icon-triangle-1-s']")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//li[@data-item-value='PostMan']")).click();
+        
+        driver.findElement(By.xpath("(//div[@class='ui-selectonemenu-trigger ui-state-default ui-corner-right'])[3]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//li[text()='Tamil']")).click(); 
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"j_idt87:value\"]/div[3]")).click();
+        driver.findElement(By.xpath("//li[text()='இரண்டு']")).click(); 
+        driver.quit();
+       
+        
+        
+        
+        
+	}
+
+}
