@@ -1,0 +1,79 @@
+package Dropdown;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class EAT {
+
+	public static void main(String[] args) throws InterruptedException
+	{
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://192.168.168.183:8081/Employee-Activity-Portal/");
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='login-username']")).sendKeys("aarun");
+		driver.findElement(By.xpath("//input[@id='login-password']")).sendKeys("AA@nd15063638");
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("//li[@class='sidebarUserCertification']")).click();
+		
+		String[] catList={
+				"None",
+				"Guidewire",
+				"MuleSoft",
+				"SnapLogic",
+				"Microsoft",
+				"CISCO",
+				"Oracle",
+				"Amazon",
+				"Testing",
+				"Scrum",
+				"MongoDB",
+				"Python",
+				"Google",
+				"Cognizant",
+				"Flowgear",
+				"Socotra",
+				"Google Cloud",
+				"REST API",
+				"Selenium",
+				"Ui Path",
+				"Lead Training",
+				"Quality",
+				"ISO"
+		};
+		
+		
+	     List<WebElement> Listofvalue = driver.findElements(By.xpath("//*[@id=\"select2-category-results\"]/li"));
+	     for(int i=0; i<catList.length; i++ ) {
+	    	 
+	    	WebElement Dropdown = driver.findElement(By.xpath("//span[@class='select2-selection select2-selection--single']"));
+	  		Dropdown.click();
+	  		
+	  		int row = i+2;
+	    	 WebElement val = driver.findElement(By.xpath("//*[@id=\"select2-category-results\"]/li["+row+"]"));
+	    	 System.out.println(val.getText());
+	    	 val.click();
+	    	 
+	    	Thread.sleep(2000);
+	    	 WebElement Dropdown2 = driver.findElement(By.xpath("//*[@id=\"select2-certficateTitle-container\"]"));
+	  		Dropdown2.click();
+	    	 
+	  		
+	  		List<WebElement> Listofvalue1 = driver.findElements(By.xpath("//*[@id=\"select2-certficateTitle-results\"]/li"));
+	  		 for(int j=2; j<=Listofvalue1.size(); j++ ) {
+	  			WebElement val2 = driver.findElement(By.xpath("//*[@id=\"select2-certficateTitle-results\"]/li["+j+"]"));
+		    	 System.out.println(val2.getText());
+	  		 }
+
+	    	 
+	     }
+	
+		
+		
+	}
+
+}
