@@ -1,0 +1,180 @@
+package Leafground;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.security.Key;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class Inspection_Textbox {
+
+	public static void main(String[] args) throws InterruptedException, AWTException {
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://leafground.com/dashboard.xhtml");
+		System.out.println("URL Launched successfully");
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath("//*[contains(@class,'pi pi-server layout-menuitem-icon')]")).click();
+		driver.findElement(By.xpath("//i[@class='pi pi-fw pi-check-square layout-menuitem-icon']")).click();
+		driver.findElement(By.xpath("//input[@id='j_idt88:name']")).sendKeys("Arun Anandhan");
+		driver.findElement(By.xpath("//input[@id='j_idt88:j_idt91']")).clear();
+		driver.findElement(By.xpath("//input[@id='j_idt88:j_idt91']")).sendKeys("Trichy");
+		WebElement verifytextbox = driver.findElement(By.xpath("(//div[@class='col-12'])[3]"));
+		if (verifytextbox.isEnabled()) {
+			System.out.println("Is Disabled");
+		} else {
+			System.out.println("Is Enabled");
+		}
+		driver.findElement(By.xpath("//input[@name='j_idt88:j_idt95']")).clear();
+		System.out.println("Text has been cleared");
+		String attribute = driver.findElement(By.id("j_idt88:j_idt97")).getAttribute("value");
+		System.out.println(attribute);
+		WebElement Entertab = driver.findElement(By.id("j_idt88:j_idt99"));
+		Entertab.sendKeys("gokulsairam@gmail.com");
+		Entertab.sendKeys(Keys.TAB);
+		System.out.println("Email entered successfully");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//textarea[@name='j_idt88:j_idt101']"))
+		.sendKeys(" “Sure, so, my name is Joe and I am 27 years old.\r\n" + "\r\n"
+				+ "        For the past 5 years, I’ve been working as a business analyst at Company X and Y.\r\n"
+				+ "\r\n"
+				+ "        I have some background in data analysis, with a degree from University XY. What really got me into the field, though, is the internship I did at Company Z. \r\n"
+				+ "\r\n"
+				+ "        Throughout my career, I’ve noticed that I’ve always been good with numbers and handling data.");
+
+		driver.findElement(By.xpath("//div[@class='ql-editor ql-blank']")).sendKeys(
+				"The answer is based on experiences and achievements. Joe talks about his work experience as a business analyst, and covers some of his top achievements.");
+		WebElement Selectall = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt103_editor\"]/div[1]/p"));
+		String selectedText = Selectall.getText();
+		System.out.println("Selected text: " + selectedText);
+		Actions action = new Actions(driver);
+		action.keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).build().perform();
+
+		//      action.keyDown(Keys.CONTROL).sendKeys("B").keyUp(Keys.CONTROL).build().perform();
+
+		driver.findElement(By.xpath("//button[@class='ql-bold']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='ql-italic']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='ql-underline']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='ql-strike']")).click();
+		driver.findElement(By.xpath("//button[@class='ql-header']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@value='2']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//button[@type='button'])[9]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='ql-code-block']")).click();
+		driver.findElement(By.xpath("//button[@class='ql-code-block ql-active']")).click();
+
+		//  Color picking for the text
+
+		WebElement Textcolour = driver.findElement(By.xpath("//span[@class='ql-color ql-picker ql-color-picker']"));
+		Textcolour.click();
+		Textcolour.findElement(By.xpath("(//span[@class='ql-picker-item ql-primary'])[2]")).click();
+		WebElement Textbox = driver.findElement(By.xpath("//div[@class='ql-editor ql-blank']"));
+		Textbox.sendKeys(Keys.ENTER);
+		Selectall = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt103_editor\"]/div[1]/p"));
+		Textcolour = driver.findElement(By.xpath("//span[@class='ql-color ql-picker ql-color-picker']"));
+		Textcolour.click();
+		System.out.println("First colour applied");
+		Thread.sleep(2000);
+
+		Textcolour.findElement(By.xpath("(//span[@class='ql-picker-item ql-primary'])[3]")).click();
+		Textbox.sendKeys(Keys.ENTER);
+		Selectall = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt103_editor\"]/div[1]/p"));
+		Textcolour = driver.findElement(By.xpath("//span[@class='ql-color ql-picker ql-color-picker']"));
+		Textcolour.click();
+		System.out.println("Second colour applied");
+		Thread.sleep(2000);
+
+		Textcolour.findElement(By.xpath("(//span[@class='ql-picker-item ql-primary'])[4]")).click();
+		Textbox.sendKeys(Keys.ENTER);
+		Selectall = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt103_editor\"]/div[1]/p"));
+		Textcolour = driver.findElement(By.xpath("//span[@class='ql-color ql-picker ql-color-picker']"));
+		Textcolour.click();
+		System.out.println("Third colour applied");
+		Thread.sleep(2000);
+
+		Textcolour.findElement(By.xpath("(//span[@class='ql-picker-item ql-primary'])[5]")).click();
+		Textbox.sendKeys(Keys.ENTER);
+		Selectall = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt103_editor\"]/div[1]/p"));
+		Textcolour = driver.findElement(By.xpath("//span[@class='ql-color ql-picker ql-color-picker']"));
+		Textcolour.click();
+		System.out.println("Fourth colour applied");
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//button[@class='ql-image']")).click();
+		Thread.sleep(2000);
+		StringSelection image = new StringSelection("C:\\Users\\aarun\\Desktop\\logo\\Claire_Logo.png");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(image, null);
+
+		//      Robot is used for the action like select the text and deselect it
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		System.out.println("Image Uploaded successfully");
+
+		//      Next tab of the text box page
+
+		WebElement Emptybox = driver.findElement(By.xpath("//input[@id='j_idt106:thisform:age']"));
+		Emptybox.sendKeys(Keys.ENTER);
+		WebElement Sample = driver
+				.findElement(By.xpath("//div[@class='ui-message ui-message-error ui-widget ui-corner-all']"));
+
+		if (Sample.isDisplayed()) {
+			System.out.println("Error Message is Displayed");
+
+		} else {
+			System.out.println("Error Message is Not Displayed");
+		}
+
+		WebElement labelposition = driver.findElement(By.xpath("//input[@name='j_idt106:float-input']"));
+		labelposition.click();
+		if (labelposition.isDisplayed()) {
+			System.out.println("The label position is changed successfully");
+		} else {
+			System.out.println("The label position is not changed");
+		}
+
+		driver.findElement(By.xpath("(//input[@type='text'])[11]")).sendKeys("Arun");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//ul[@class='ui-autocomplete-items ui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset']/li[3]"))
+		.click();
+		driver.findElement(By.xpath("//input[@id='j_idt106:j_idt116_input']")).sendKeys("06/15/1999");
+		driver.findElement(By.xpath("//a[text()='15']")).click();
+		System.out.println("Entered DOB is correct");
+		driver.findElement(By.xpath("//input[@name='j_idt106:j_idt118_input']")).sendKeys("4");
+		driver.findElement(By.xpath(
+				"//a[@class='ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default ui-button-text-only']"))
+		.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//a[@class='ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default ui-button-text-only']"))
+		.click();
+		System.out.println("The Value is spinned successfully");
+		driver.findElement(By.xpath("//input[@id='j_idt106:slider']")).sendKeys("45");
+		driver.findElement(By.xpath("//input[@id='j_idt106:j_idt122']")).click();
+		System.out.println("Keyboard opened successfully");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@title='Close the keypad']")).click();
+
+	}
+}
