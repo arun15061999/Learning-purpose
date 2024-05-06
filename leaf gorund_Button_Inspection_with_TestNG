@@ -1,0 +1,147 @@
+package leafground;
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
+import org.testng.Assert;
+import org.testng.SkipException;
+import org.testng.annotations.Test;
+
+
+public class Inspection_Button {
+	WebDriver driver;
+	
+	@Test(priority = 0)
+     public void urlinitialization1() throws InterruptedException 
+	{
+	    driver = new ChromeDriver();
+		driver.get("https://leafground.com/dashboard.xhtml");
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		System.out.println("URL lanched successfully");
+		driver.manage().window().maximize();
+		}
+
+	@Test(priority = 1)
+	public void getelemant()
+	{
+		driver.findElement(By.xpath("//*[contains(@class,'pi pi-server layout-menuitem-icon')]")).click();
+		driver.findElement(By.xpath("//a[@class='rotated-icon']")).click();
+		driver.findElement(By.xpath("//span[text()='Click']")).click();
+		String VerifyTitle = driver.getTitle();
+		System.out.println("The Title of the page is " +VerifyTitle);
+		driver.navigate().back();
+	}
+	@Test(priority = 2)
+	public void getbutton()
+	{
+
+		WebElement Disablebutton = driver.findElement(By.xpath("//button[@id='j_idt88:j_idt92']"));
+		if(Disablebutton.isEnabled())
+		{
+			System.out.println("The button is not disabled");
+		} else {
+			System.out.println("The button is disabled");
+		}
+		driver.findElement(By.xpath("//button[@id='j_idt88:j_idt94']"));
+	}
+	
+	@Test(priority = 3)
+	public void buttonlocation()
+	{
+		// find the button location
+		WebElement Buttonlocation = driver.findElement(By.xpath("(//span[@class='ui-button-text ui-c'])[3]"));
+		Point buttonPosition = Buttonlocation.getLocation();
+		int xCoordinate = buttonPosition.getX();
+		int yCoordinate = buttonPosition.getY();
+		System.out.println("Button position (X, Y): (" + xCoordinate + ", " + yCoordinate + ")");
+		Buttonlocation.click();
+	}
+	
+	@Test(priority = 4)
+	public void Buttoncolourfind()
+	{	
+		// find the button colour
+		WebElement Buttoncolour = driver.findElement(By.xpath("(//span[@class='ui-button-text ui-c'])[4]"));
+		String backgroundColor = Buttoncolour.getCssValue("background-color");
+		System.out.println("Button background color: " + backgroundColor);
+		String textColor = Buttoncolour.getCssValue("color");
+		System.out.println("Button text color: " + textColor);
+		String hexBackgroundColor = Color.fromString(backgroundColor).asHex();
+		String hexTextColor = Color.fromString(textColor).asHex();
+		System.out.println("Button background color (hex): " + hexBackgroundColor);
+		System.out.println("Button text color (hex): " + hexTextColor);
+	}
+	
+	@Test(priority = 5)
+	public void Buttondimensionfind()
+	{
+	
+		// find the button dimension
+		WebElement Buttondimension = driver.findElement(By.xpath("(//span[@class='ui-button-text ui-c'])[5]"));
+		Dimension Buttonarea = Buttondimension.getSize();
+		int buttonWidth = Buttonarea.getWidth();
+		int buttonHeight = Buttonarea.getHeight();
+		System.out.println("Button width: " + buttonWidth + " pixels");
+		System.out.println("Button height: " + buttonHeight + " pixels");
+		Buttondimension.click();
+	}
+	
+	@Test(priority = 6)
+	public void ButtonHoverfind() throws InterruptedException
+	{
+	
+		WebElement ButtonHover = driver.findElement(By.xpath("//span[text()='Success']"));
+	    Actions action = new Actions(driver);
+	    action.moveToElement(ButtonHover).perform();
+	    String button_colour1 = ButtonHover.getCssValue("color");
+	    System.out.println("Colour of the field after hovering is: " + button_colour1 );
+	    WebElement Imagebutton = driver.findElement(By.xpath("//span[text()='Image']"));
+	    Imagebutton.click();
+	    Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", Imagebutton);
+       if(js.getPinnedScripts() != null)
+	    
+       {
+    	   System.out.println(" The hidden Button is clicked");
+	    
+	} else {
+		   System.out.println(" The hidden Button is not clicked");
+	}
+       List<WebElement> Buttoncount = driver.findElements(By.xpath("(//div[@class='card'])[7]/Button"));
+       int Count = Buttoncount.size();
+       System.out.println("Number of rounded buttons: " + Count);
+       driver.quit();
+	}
+	
+	public class TestClassOne {
+	    @Test
+	    public void testMethodPass() {
+	        Assert.assertTrue(true);
+	    }
+
+	    @Test
+	    public void testMethodFail() {
+	        Assert.assertTrue(false);
+	    }
+
+	    @Test
+	    public void testMethodSkip() {
+	        throw new SkipException("Skipped Intentionally");
+	    }
+	   
+	}
+	
+    }
+
+    
+
+
